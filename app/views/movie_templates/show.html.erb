@@ -1,5 +1,7 @@
 <h1>
-  Movie #<%= @the_movie.id %> details
+  Movie #<%= @the_movie.director.name %> details
+
+
 </h1>
 
 <div>
@@ -112,6 +114,8 @@
     Director
   </dt>
   <dd>
+
+    <%= @the_movie.director.name%>
     <% the_id = @the_movie.director_id %>
 
     <% matching_directors = Director.where({ :id => the_id }) %>
