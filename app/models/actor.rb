@@ -11,6 +11,7 @@
 #  updated_at :datetime         not null
 #
 class Actor < ApplicationRecord
+  
   def characters
     my_id = self.id
 

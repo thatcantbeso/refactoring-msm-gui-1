@@ -13,21 +13,16 @@
 #  director_id :integer
 #
 class Movie < ApplicationRecord
-
   def director
     d_id = self.director_id
-
-   matching_directors = Director.where({ :id => d_id })
-
-   the_director = matching_directors.at(0)
-
-  return the_director
-  end
-
-  def title_with_year
-
-    return "#{self.title} (#{self.year})"
-  end
+  
+     matching_directors = Director.where({ :id => d_id })
+  
+     the_director = matching_directors.at(0)
+  
+      return the_director
+    end
+  
 
   def characters
     my_id = self.id
@@ -37,4 +32,10 @@ class Movie < ApplicationRecord
     return matching_characters.at(0)
   
   end
+
+  def title_with_year
+    return "#{self.title} (#{self.year})"
+  end
+
+
 end
